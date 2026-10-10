@@ -10,7 +10,12 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-TEST_DATABASE_URL = DATABASE_URL.rsplit("/", 1)[0] + "/data_processing_test"
+TEST_DATABASE_URL = os.getenv("TEST_DATABASE_URL")
+
+if not TEST_DATABASE_URL:
+    TEST_DATABASE_URL = (
+        DATABASE_URL.rsplit("/", 1)[0] + "/data_processing_test"
+    )
 
 test_engine = create_engine(TEST_DATABASE_URL)
 

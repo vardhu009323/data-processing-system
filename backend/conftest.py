@@ -5,14 +5,13 @@ from sqlalchemy.orm import sessionmaker
 
 from main import app, get_db
 from database import Base
-from models import Job
 from test_database import test_engine
 
 
 TestSessionLocal = sessionmaker(
     bind=test_engine,
     autoflush=False,
-    autocommit=False
+    autocommit=False,
 )
 
 
@@ -20,6 +19,16 @@ TestSessionLocal = sessionmaker(
 def reset_test_database():
     Base.metadata.drop_all(bind=test_engine)
     Base.metadata.create_all(bind=test_engine)
+    yield
+
+
+@pytest.fixture
+def test_db_session():
+    session = TestSessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()
 
 
 @pytest.fixture
