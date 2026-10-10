@@ -1,0 +1,303 @@
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e8edf7;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+.dashboard {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 13px;
+  background: #6d5dfc;
+  font-weight: 800;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.header p,
+.muted {
+  color: #99a5bb;
+  font-size: 0.9rem;
+}
+
+.header p {
+  margin: 5px 0 0;
+}
+
+.intro {
+  margin: 60px 0 28px;
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: #a99fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.intro h2 {
+  margin: 12px 0;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  letter-spacing: -0.045em;
+}
+
+.intro > p:last-child {
+  color: #a9b4c9;
+  line-height: 1.7;
+}
+
+.panel {
+  margin-top: 20px;
+  padding: 26px;
+  border: 1px solid #263149;
+  border-radius: 18px;
+  background: #111a2d;
+}
+
+.panel h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.panel > .muted {
+  margin: 8px 0 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #34415b;
+  border-radius: 10px;
+  outline: none;
+  background: #0b1020;
+  color: #e8edf7;
+  line-height: 1.6;
+}
+
+textarea:focus {
+  border-color: #8b7fff;
+}
+
+button {
+  margin-top: 16px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #7867ff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.secondary-button {
+  margin-top: 0;
+  border: 1px solid #34415b;
+  background: #19243a;
+  color: #e8edf7;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 10px;
+}
+
+.error {
+  border: 1px solid #783d4c;
+  background: #321a27;
+  color: #ffb6c4;
+}
+
+.result-heading,
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #153c34;
+  color: #7ce3bd;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.results > .muted {
+  margin: 12px 0 20px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.result-card {
+  padding: 18px;
+  border: 1px solid #293750;
+  border-radius: 12px;
+  background: #0d1527;
+}
+
+.result-card p {
+  margin: 0 0 12px;
+  color: #a9b4c9;
+  font-size: 0.9rem;
+}
+
+.result-card strong {
+  font-size: 1.8rem;
+  overflow-wrap: anywhere;
+}
+
+.history-heading {
+  margin-bottom: 22px;
+}
+
+.history-heading h3 {
+  margin-bottom: 8px;
+}
+
+.history-heading .muted {
+  margin: 0;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #293750;
+  font-size: 0.88rem;
+}
+
+th {
+  color: #a9b4c9;
+  font-weight: 600;
+}
+
+td {
+  color: #e8edf7;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.empty-state {
+  padding: 22px 0;
+  color: #a9b4c9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #293750;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+footer {
+  padding: 36px 0 10px;
+  color: #78859c;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .dashboard {
+    padding-top: 24px;
+  }
+
+  .intro {
+    margin-top: 42px;
+  }
+
+  .panel {
+    padding: 19px;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-heading {
+    align-items: flex-start;
+  }
+
+  .pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
